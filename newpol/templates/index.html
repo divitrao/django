@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta content="straight news">
+    <meta content="Donald trump going to loose ">
+    <meta content="As per new opinion poll biden harris will will US presidential race  ">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static '\css\index.css'%}" >
+</head>
+<body>
+<div class="header">
+    <div class="header-content"> बातमी </div>
+    <div class="header-content"> समाचार </div>
+    <div class="header-content"> ಸುದ್ದಿ </div>
+    <div class="header-content"> ਖ਼ਬਰਾਂ </div>
+    <div class="header-content"> ସମ୍ବାଦ </div>
+    <div class="header-content"> NEWS </div>
+    <div class="header-content"> వార్తలు </div>
+    <div class="header-content">  വാർത്ത </div>
+    <div class="header-content"> খবর </div>
+    <div class="header-content"> செய்தி </div>
+    <div class="header-content"> خبریں </div>
+
+</div>
+
+<div class="realnews">
+<!--<div class="realnews-content1" >   <img src="{% static '\image\news.jpg' %}">  </div>-->
+<!--<div class="realnews-content2"> <img src="{% static '\image\news.jpg' %}"> </div>-->
+<!--    <div class="realnews-content2"> <img src="{% static '\image\news.jpg' %}"> </div>-->
+<!--    <div class="realnews-content2"> <img src="{% static '\image\news.jpg' %}"> </div>-->
+    {% for contents in content %}
+
+    <div class="inside-flex">
+        <div class="discription-of-news"  > <h3><p>{{ contents.content_of_news}}<i> click on picture for info</i>  </p></h3></div>
+        <div > <nav ><a href="{{contents.link}}"  > <img onclick="clickedOnPicture()" src=" {{ contents.image.url}}"></a></nav> </div>
+        <div class="news_about"><p>{{ contents.news_about}}</p></div>
+        
+    </div>
+   
+
+
+ {% endfor %}
+
+
+
+
+
+
+
+</div>
+
+
+</body>
+</html>
